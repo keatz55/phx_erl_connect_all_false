@@ -9,7 +9,7 @@ In order to replicate, I've created 3 freshly generated phoenix apps where the f
 
 ```shell
 # Terminal 1
-make compose.up # Starts apps 1-3 with `iex --erl "-connect_all false" --sname app{1-3}@app{1-3} --cookie monster`
+make compose.up # Starts apps 1-3 with `iex --erl "-connect_all false" --sname app{1-3}@app{1-3} --cookie monster -S mix phx.server`
 make app1.iex # attaches to running app1 iex session
 
 # Terminal 2
@@ -31,7 +31,7 @@ iex(app3@app3)2> Node.list()
 
 ```shell
 # Terminal 1
-make compose.up # Starts apps 1-3 with `iex --erl "-connect_all false" --sname app{1-3}@app{1-3} --cookie monster`
+make compose.up # Starts apps 1-3 with `iex --erl "-connect_all false" --sname app{1-3}@app{1-3} --cookie monster -S mix phx.server`
 make app1.iex # attaches to running app1 iex session
 iex(app1@app1)1>
 
