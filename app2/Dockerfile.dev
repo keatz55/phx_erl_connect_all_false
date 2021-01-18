@@ -1,0 +1,14 @@
+FROM elixir:1.10.4-alpine
+
+RUN apk add --no-cache build-base openssl
+
+RUN mix local.hex --force && \
+    mix local.rebar --force
+
+WORKDIR /app
+
+COPY mix.exs .
+COPY mix.lock .
+
+# CMD mix deps.get && iex --erl "-connect_all false" --sname app2@app2 --cookie monster -S mix phx.server
+CMD mix deps.get && iex --erl "-connect_all false" --sname app2@app2 --cookie monster
