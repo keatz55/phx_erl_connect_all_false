@@ -10,5 +10,4 @@ WORKDIR /app
 COPY mix.exs .
 COPY mix.lock .
 
-# CMD mix deps.get && iex --erl "-connect_all false" --sname app1@app1 --cookie monster -S mix phx.server
-CMD mix deps.get && iex --erl "-connect_all false" --sname app1@app1 --cookie monster
+CMD mix deps.get && iex --erl "-connect_all false" --sname app1@app1 --cookie monster -S mix phx.server
